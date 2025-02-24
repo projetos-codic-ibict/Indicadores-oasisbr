@@ -11,14 +11,11 @@ oasisbrEvolucao <- tryCatch(
 
   },
   error = function(e){
-    
-    oasisbrEvolucao <- fromJSON([])
     print("========================")
     print("Indicadores de evolução:")
     print("STATUS: ERRO!")
-    print(e)
     print("========================")
-    return(oasisbrEvolucao)
+    return(null)
 
   }
 )
