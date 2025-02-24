@@ -1,7 +1,10 @@
 
+# Formatar a data no formato "dia/mes/ano"
+data_formatada <- format(data_atual, "%d/%m/%Y")
+
 oasisbrEvolucao <- tryCatch(
   {
-    oasisbrEvolucao <- fromJSON("http://localhost:3000/api/v1/evolution-indicators?init=10/10/2010&end=06/12/2022")
+    oasisbrEvolucao <- fromJSON("http://localhost:3000/api/v1/evolution-indicators?init=10/10/2010&end=", data_formatada)
     print("========================")
     print("Indicadores de evolução:")
     print("STATUS: ONLINE")
