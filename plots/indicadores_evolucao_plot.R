@@ -15,7 +15,7 @@ oasisbrEvolucao <- tryCatch(
     print("Indicadores de evolução:")
     print("STATUS: ERRO!")
     print("========================")
-    return(null)
+    return(e)
 
   }
 )
