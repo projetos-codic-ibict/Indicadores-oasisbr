@@ -28,7 +28,7 @@ shiny::validate(need(is.null(oasisbrEvolucao)==FALSE, paste("Erro.")))
 
 
 ## Cria novo dataframe com 'content'
-content <- oasisbrEvolucao$content
+content <- oasisbrEvolucao
 
 
 ## Transforma coluna 'createdAt' para formato de data.
