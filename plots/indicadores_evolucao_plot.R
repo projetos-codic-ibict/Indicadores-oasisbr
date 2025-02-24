@@ -5,8 +5,7 @@ oasisbrEvolucao <- tryCatch(
     data_formatada <- format(data_atual, "%d/%m/%Y")
     # Montar a URL corretamente
     # url <- paste0("http://172.16.17.19:3000/api/v1/evolution-indicators?init=10/10/2010&end=", data_formatada)
-    url <- paste0("http://172.16.17.19:3000/api/v1/evolution-indicators")
-    oasisbrEvolucao <- fromJSON(url)
+    oasisbrEvolucao <- fromJSON("http://172.16.17.19:3000/api/v1/evolution-indicators")
     print("========================")
     print("Indicadores de evolução:")
     print("STATUS: ONLINE")
@@ -19,7 +18,7 @@ oasisbrEvolucao <- tryCatch(
     print("Indicadores de evolução:")
     print("STATUS: ERRO!")
     print("========================")
-    return(oasisbrEvolucao)
+    return(null)
 
   }
 )
