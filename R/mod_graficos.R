@@ -1,6 +1,6 @@
 mod_graficos_UI <- function(id,x) {
   ns <- NS(id)
-  
+  ano_atual <- as.numeric(format(Sys.Date(), "%Y"))
   tagList(
     fluidRow(
      
@@ -47,7 +47,7 @@ mod_graficos_UI <- function(id,x) {
   
              box(
                title = "Documentos por tipo e ano", width = 12, solidHeader = TRUE, #status = "primary",
-               column(12,sliderInput(ns("tipo_docSliderInput"),"Ano de publicação",min = 1980, max = 2022, value = c(1980, 2021),width="30%",sep="")),
+               column(12,sliderInput(ns("tipo_docSliderInput"),"Ano de publicação",min = 1980, max = ano_atual, value = c(1980, 2021),width="30%",sep="")),
                column(12,addSpinner(plotlyOutput(ns("tipo_anoPlotlyOutput"),height="350px"),spin="folding-cube",color="green")),
              ),
              

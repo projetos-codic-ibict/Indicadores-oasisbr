@@ -1,6 +1,6 @@
 mod_analises_avancadas_UI <- function(id) {
   ns <- NS(id)
-  
+  ano_atual <- as.numeric(format(Sys.Date(), "%Y"))
   tagList(
     # Sidebar
     column(12,h1("Análises avançadas")),
@@ -11,7 +11,7 @@ mod_analises_avancadas_UI <- function(id) {
         condition = "input.analises_input == 'heatmap'",ns=ns,
         column(12,sliderInput(ns("ano_heatmap_input"),
                               label = "Ano de publicação",
-                              min = 1970, max = 2022, value = c(1970, 2022),sep="")),
+                              min = 1970, max = ano_atual, value = c(1970, ano_atual),sep="")),
         numericInput(ns("top_instituicoes"),"Qtde. de Instituicoes",min=1,max=133, value=80)
        # selectInput(ns("instituicoes_input"),"Selecionar instituicoes",choices = instituicoes_unicas,multiple = TRUE)
       )
