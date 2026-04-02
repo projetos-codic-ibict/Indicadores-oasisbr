@@ -2,7 +2,7 @@
 
 ################################################################################
 # Função de busca para criar json com busca feita pelo usuario utilizando a API
-busca_oasisbr <- function(url="http://localhost/vufind/api/v1/search?",
+busca_oasisbr <- function(url="https://oasisbr.ibict.br/vufind/api/v1/search?",
                           lookfor,
                           type="AllFields",
                           sort="relevance",

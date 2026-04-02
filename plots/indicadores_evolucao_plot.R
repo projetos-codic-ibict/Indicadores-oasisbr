@@ -1,11 +1,15 @@
 oasisbrEvolucao <- tryCatch(
   {
+
     # Formatar a data no formato "dia/mes/ano"
     data_atual <- Sys.Date()
     data_formatada <- format(data_atual, "%d/%m/%Y")
     # Montar a URL corretamente
     url <- paste0("http://172.16.17.19:3000/api/v1/evolution-indicators?init=01/01/2017&end=", data_formatada)
     oasisbrEvolucao <- fromJSON(url)
+
+    # oasisbrEvolucao <- fromJSON("https://api-oasisbr.ibict.br/api/v1/evolution-indicators?init=10/10/2017&end=10/10/2021")
+
     print("========================")
     print("Indicadores de evolução:")
     print("STATUS: ONLINE")
