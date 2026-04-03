@@ -20,9 +20,18 @@ oasisbrEvolucao <- tryCatch(
     print("Indicadores de evolução:")
     print("STATUS: ERRO!")
     print("========================")
-    return(null)
+    return(NULL)
   }
 )
+
+if (is.null(oasisbrEvolucao)) {
+  if (file.exists("data/indicadores_de_evolucao.json")) {
+    oasisbrEvolucao <- fromJSON("data/indicadores_de_evolucao.json")
+    print("STATUS: USANDO CACHE LOCAL")
+  } else {
+    stop("API indisponível e cache local ausente.")
+  }
+}
 
 
 shiny::validate(need(is.null(oasisbrEvolucao) == FALSE, paste("Erro.")))
